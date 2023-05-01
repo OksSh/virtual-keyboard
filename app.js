@@ -98,7 +98,29 @@ keyboard.addEventListener('click', (event) => {
   if (event.target.classList.contains('button')) {
     event.target.classList.toggle('active');
     setTimeout(() => event.target.classList.toggle('active'), 200);
-    textArea.textContent = textArea.textContent + event.target.textContent;
+
+    if (
+      event.target.id != '13' &&
+      event.target.id != '8' &&
+      event.target.id != '9'
+    ) {
+      textArea.textContent = textArea.textContent + event.target.textContent;
+    }
+
+    if (event.target.id == '13') {
+      textArea.textContent = textArea.textContent + '\n';
+    }
+
+    if (event.target.id == '8') {
+      textArea.textContent = textArea.textContent.slice(
+        0,
+        textArea.textContent.length - 1
+      );
+    }
+
+    if (event.target.id == '9') {
+      textArea.textContent = textArea.textContent + ' '.repeat(8);
+    }
   }
 });
 
@@ -108,7 +130,25 @@ document.addEventListener('keydown', (event) => {
   for (let item of buttons) {
     if (item.id == event.which) {
       item.classList.toggle('active');
-      textArea.textContent = textArea.textContent + item.textContent;
+
+      if (item.id != '13' && item.id != '8' && item.id != '9') {
+        textArea.textContent = textArea.textContent + item.textContent;
+      }
+
+      if (item.id == '13') {
+        textArea.textContent = textArea.textContent + '\n';
+      }
+
+      if (item.id == '8') {
+        textArea.textContent = textArea.textContent.slice(
+          0,
+          textArea.textContent.length - 1
+        );
+      }
+
+      if (item.id == '9') {
+        textArea.textContent = textArea.textContent + ' '.repeat(8);
+      }
     }
   }
 });
@@ -119,7 +159,6 @@ document.addEventListener('keyup', (event) => {
   for (let item of buttons) {
     if (item.id == event.which) {
       item.classList.toggle('active');
-      textArea.textContent = textArea.textContent + item.textContent;
     }
   }
 });
