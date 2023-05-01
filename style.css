@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.text-area {
+  margin: 20px;
+}
+
+.keyboard {
+  margin: 20px;
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.button {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000000;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button-space {
+  width: 340px;
+}
+
+.button-middle {
+  width: 130px;
+}
+
+.active {
+  background-color: rgb(215, 161, 34);
+}
