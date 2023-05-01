@@ -98,6 +98,7 @@ keyboard.addEventListener('click', (event) => {
   if (event.target.classList.contains('button')) {
     event.target.classList.toggle('active');
     setTimeout(() => event.target.classList.toggle('active'), 200);
+    textArea.textContent = textArea.textContent + event.target.textContent;
   }
 });
 
@@ -107,6 +108,7 @@ document.addEventListener('keydown', (event) => {
   for (let item of buttons) {
     if (item.id == event.which) {
       item.classList.toggle('active');
+      textArea.textContent = textArea.textContent + item.textContent;
     }
   }
 });
@@ -117,6 +119,7 @@ document.addEventListener('keyup', (event) => {
   for (let item of buttons) {
     if (item.id == event.which) {
       item.classList.toggle('active');
+      textArea.textContent = textArea.textContent + item.textContent;
     }
   }
 });
